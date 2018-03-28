@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Address Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="public/css/style.css" />
+    <link rel="icon" href="public/images/addressbook.png">
+</head>
+<body>
+    <!--Mobile-->
+    <div id="mobile">
+        <div id="landing-page">
+            <img id="first" src="public/images/addressbookss.png" alt="address book icon">
+            <img id="second" src="public/images/opens.png">
+        </div>
+        <div id="contacts">
+            <div id="h2"><h2>Contacts</h2></div>
+            <div id="contact-list">
+
+            </div>
+            <p id="delete-message">Contact deleted</p>
+            <img id="addcontacticon" src="public/images/add.png" alt="Add contact">
+        </div>
+        <div id="add-contact">
+            <img id="gobacka" src="public/images/goback3.png" alt="Go back">
+            <div id="addback">
+                <img src="public/images/added.png">
+                <p>Add New Contact</p>
+            </div>
+            <form id="myForm">
+                <input id="fullname" type="text" name="fullname" placeholder="Full Name" maxlength="30" required/>
+                <input id="phonenumber" type="tel" name="phonenum" placeholder="Phone Number" minlength="11" maxlength="15" required />
+                <input id="email" type="email" name="email" placeholder="Email address" maxlength="50" required />
+                <label for="picture">Picture</label>
+                <input type="file" name="image" id="pictures" accept=".jpg, .jpeg, .png">
+            </form>
+            <button id="save">Save</button>
+            <p id="success">Contacts added successfully</p>
+        </div>
+        <div id="view-contact">
+            <div id="addback">
+                <img src="public/images/viewcontacts.png" alt="picture of the contact" id="picture"> 
+            </div>
+            <img id="goback" src="public/images/goback3.png" alt="Go back">
+            <div id="named" class="viewdisplay">
+                <p><b>Name</b></p>
+            </div>
+            <div id="phone-numberd" class="viewdisplay">
+                <p><b>Number</b></p>
+            </div>
+            <div id="emaild" class="viewdisplay">
+                <p><b>Email Address</b></p>
+            </div>
+            <img id="edit" src="public/images/edit.png" alt="Edit">
+            <img id="delete" src="public/images/delete.png" alt="delete">
+        </div>
+    </div>
+    <script src="public/js/main.js"></script>
+</body>
+</html>
