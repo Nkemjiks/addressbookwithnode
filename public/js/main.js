@@ -63,12 +63,8 @@ savebutton.addEventListener('click', function(){
     if(document.getElementById('fullname').value.match(/^[a-zA-Z0-9 ]+$/) && document.getElementById('phonenumber').value.match(/^[0-9]+$/) && document.getElementById('email').value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
         activeChild = document.getElementById('fullname').value;
         var name = document.getElementById('fullname').value;
-        addressBook[name] = {name: document.getElementById('fullname').value, phonenumber: document.getElementById('phonenumber').value , email: document.getElementById('email').value, image: document.getElementById('pictures').value};
+        addressBook[name] = {name: document.getElementById('fullname').value, phonenumber: document.getElementById('phonenumber').value , email: document.getElementById('email').value};
         localStorage.setItem('addressBook', JSON.stringify(addressBook));
-        //I can't get the full file path to the uploaded image due to security reasons attached in most browser
-        //picture.src = document.getElementById('pictures').value;
-        //console.log(document.getElementById('pictures').value);
-
         el1Child.innerHTML = document.getElementById('fullname').value;
         el1.appendChild(el1Child);
         el2Child.innerHTML = document.getElementById('phonenumber').value;
@@ -90,7 +86,6 @@ goBack.addEventListener('click', function(){
     el1.removeChild(el1.childNodes[3]);
     el2.removeChild(el2.childNodes[3]);
     el3.removeChild(el3.childNodes[3]);
-    //picture.src = 'public/images/added.png';
     while(el.hasChildNodes()) {
         el.removeChild(el.firstChild);
     }
@@ -110,7 +105,6 @@ goBacka.addEventListener('click', function(){
 el.addEventListener('click', function() {
     if(event.target.tagName === 'P'){
         activeChild = event.target.textContent;
-        //picture.src = addressBook[event.target.textContent].image;
         el1Child.innerHTML = addressBook[event.target.textContent].name;
         el1.appendChild(el1Child);
         el2Child.innerHTML = addressBook[event.target.textContent].phonenumber;
@@ -151,5 +145,4 @@ edit.addEventListener('click', function() {
     document.getElementById('fullname').value = addressBook[activeChild].name;
     document.getElementById('phonenumber').value = addressBook[activeChild].phonenumber;
     document.getElementById('email').value = addressBook[activeChild].email;
-    document.getElementById('picture').value = addressBook[activeChild].image;
 });

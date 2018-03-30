@@ -9,21 +9,21 @@
     #contacts > img {
         bottom: 7%;
         left: 80%;
-        width: 10%;
+        width: 15%;
     }
     #edit {
         left: 70%;
     }
     #delete {
-        left: 83%;
+        left: 85%;
     }
     #view-contact > #goback {
         top: 50px;
-        left: 35px;
+        left: 10px;
     }
     #add-contact > #gobacka {
         top: 50px;
-        left: 35px;
+        left: 10px;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -33,22 +33,22 @@
     }
     #contacts > img {
         bottom: 7%;
-        left: 65%;
-        width: 8%;
+        left: 75%;
+        width: 15%;
     }
     #delete {
-        left: 70%;
+        left: 85%;
     }
     #edit {
-        left: 60%;
+        left: 67%;
     }
     #view-contact > #goback {
         top: 8%;
-        left: 23%;
+        left: 5%;
     }
     #add-contact > #gobacka {
         top: 10%;
-        left: 23%;
+        left: 5%;
     }
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -58,22 +58,22 @@
     }
     #contacts > img {
         bottom: 7%;
-        left: 62%;
-        width: 6%;
+        left: 78%;
+        width: 15%;
     }
     #delete {
-        left: 68%;
+        left: 85%;
     }
     #edit {
-        left: 61%;
+        left: 68%;
     }
     #view-contact > #goback {
         top: 8%;
-        left: 27%;
+        left: 2%;
     }
     #add-contact > #gobacka {
         top: 10%;
-        left: 27%;
+        left: 2%;
     }
 } 
 
@@ -84,22 +84,22 @@
     }
     #contacts > img {
         bottom: 7%;
-        left: 60%;
-        width: 5%;
+        left: 78%;
+        width: 15%;
     }
     #delete {
-        left: 64%;
+        left: 85%;
     }
     #edit {
-        left: 58%;
+        left: 68%;
     }
     #view-contact > #goback {
         top: 8%;
-        left: 32%;
+        left: 3%;
     }
     #add-contact > #gobacka {
         top: 10%;
-        left: 32%;
+        left: 3%;
     }
 } 
 
@@ -110,30 +110,31 @@
     }
     #contacts > img {
         bottom: 7%;
-        left: 59%;
-        width: 4%;
+        left: 80%;
+        width: 15%;
     }
     #delete {
-        left: 60%;
+        left: 87%;
     }
     #edit {
-        left: 55%;
+        left: 71%;
     }
     #view-contact > #goback {
         top: 8%;
-        left: 36%;
+        left: 3%;
     }
     #add-contact > #gobacka {
         top: 10%;
-        left: 36%;
+        left: 3%;
     }
 }
 #landing-page, #contacts, #add-contact, #view-contact {
-    height: 98vh;
+    height: 600px;
     margin: auto auto;
     border: 4px solid #B114BB;
     border-radius: 7px;
     box-shadow: 5px 8px 15px #aaa7a7;
+    position: relative;
 }
 #view-contact, #contacts, #add-contact {
     display: none;
@@ -144,7 +145,7 @@
     margin: 0 auto;
 }
 #first {
-    width: 200px;
+    width: 50%;
     top: 70px;
 }
 #second {
@@ -166,14 +167,14 @@
 #contacts > img {
     background-color: #B114BB;
     border-radius: 50%;
-    position: fixed;
+    position: absolute;
 }
 #add-contact > p {
     width: 67%;
     margin: 20px auto;
 }
 #contacts > p {
-    position: fixed;
+    position: absolute;
     top: 85%;
     left: 30%;
     width: 40%;
@@ -254,14 +255,14 @@ button {
     color: #B114BB;
 }
 #view-contact > #goback {
-    position: fixed;
+    position: absolute;
 }
 #add-contact > #gobacka {
-    position: fixed;
+    position: absolute;
 }
 #edit , #delete {
     background-color: #B114BB;
-    position: fixed;
+    position: absolute;
     top: 88%;
     border-radius: 50%;
     width: 40px;
