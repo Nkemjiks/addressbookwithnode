@@ -1,5 +1,5 @@
 var addressBook;
-var open = document.getElementById('second');
+var open = document.getElementById('landing-page-second-icon');
 var contacts = document.getElementById('contacts');
 var landingPage = document.getElementById('landing-page');
 var addContactIcon = document.getElementById('addcontacticon');
@@ -9,19 +9,18 @@ var form = document.getElementById('myForm');
 var success = document.getElementById('success');
 var input = document.getElementsByTagName('input');
 var viewContact = document.getElementById('view-contact');
-var goBack = document.getElementById('goback');
-var goBacka = document.getElementById('gobacka');
-var el1 = document.getElementById('named');
-var el2 = document.getElementById('phone-numberd');
-var el3 = document.getElementById('emaild');
-var el = document.getElementById('contact-list');
-var el1Child = document.createElement('p');
-var el2Child = document.createElement('p');
-var el3Child = document.createElement('p');
+var viewGoBack = document.getElementById('view-go-back');
+var addGoBack = document.getElementById('add-go-back');
+var viewName = document.getElementById('view-name');
+var viewPhoneNumber = document.getElementById('view-phonenumber');
+var viewEmail = document.getElementById('view-email');
+var contactList = document.getElementById('contact-list');
+var viewNameChild = document.createElement('p');
+var viewPhoneNumberChild = document.createElement('p');
+var viewEmailChild = document.createElement('p');
 var deleteThis = document.getElementById('delete');
 var deleteSucess = document.getElementById('delete-message');
 var edit = document.getElementById('edit');
-var picture = document.getElementById('picture');
 var activeChild;
 var goAhead = false;
 
@@ -35,9 +34,9 @@ open.addEventListener('click', function(){
     landingPage.style.display = 'none';
     contacts.style.display = 'block';
     for(var key in addressBook) {
-        var elChild = document.createElement('p');
-        elChild.innerHTML = addressBook[key].name;
-        el.appendChild(elChild);
+        var contactListChild = document.createElement('p');
+        contactListChild.innerHTML = addressBook[key].name;
+        contactList.appendChild(contactListChild);
     }
 });
 addContactIcon.addEventListener('click', function(){
@@ -47,14 +46,11 @@ addContactIcon.addEventListener('click', function(){
     success.style.display = 'none';
     addContact.style.display = 'block';
 });
-function successes(){
+function saveSuccess(){
     addContact.style.display = 'none';
     viewContact.style.display = 'block';
 }
-function successez(){
-    contacts.style.display = 'none';
-    viewContact.style.display = 'block';
-}
+
 savebutton.addEventListener('click', function(){
     if(addressBook.hasOwnProperty(activeChild) && goAhead === true) {
         delete addressBook[activeChild];
@@ -65,53 +61,54 @@ savebutton.addEventListener('click', function(){
         var name = document.getElementById('fullname').value;
         addressBook[name] = {name: document.getElementById('fullname').value, phonenumber: document.getElementById('phonenumber').value , email: document.getElementById('email').value};
         localStorage.setItem('addressBook', JSON.stringify(addressBook));
-        el1Child.innerHTML = document.getElementById('fullname').value;
-        el1.appendChild(el1Child);
-        el2Child.innerHTML = document.getElementById('phonenumber').value;
-        el2.appendChild(el2Child);
-        el3Child.innerHTML = document.getElementById('email').value;
-        el3.appendChild(el3Child);
+        viewNameChild.innerHTML = document.getElementById('fullname').value;
+        viewName.appendChild(viewNameChild);
+        viewPhoneNumberChild.innerHTML = document.getElementById('phonenumber').value;
+        viewPhoneNumber.appendChild(viewPhoneNumberChild);
+        viewEmailChild.innerHTML = document.getElementById('email').value;
+        viewEmail.appendChild(viewEmailChild);
         form.reset();
         form.style.display = 'none';
         savebutton.style.display = 'none';
         success.style.display = 'block';
-        setTimeout(successes, 2000);
+        setTimeout(saveSuccess, 2000);
         
     } else {
         alert('One of the Input Fields is Invalid');
     }
 
 });
-goBack.addEventListener('click', function(){
-    el1.removeChild(el1.childNodes[3]);
-    el2.removeChild(el2.childNodes[3]);
-    el3.removeChild(el3.childNodes[3]);
-    while(el.hasChildNodes()) {
-        el.removeChild(el.firstChild);
+viewGoBack.addEventListener('click', function(){
+    viewName.removeChild(viewName.childNodes[3]);
+    viewPhoneNumber.removeChild(viewPhoneNumber.childNodes[3]);
+    viewEmail.removeChild(viewEmail.childNodes[3]);
+    while(contactList.hasChildNodes()) {
+        contactList.removeChild(contactList.firstChild);
     }
     for(var key in addressBook) {
-        var elChild = document.createElement('p');
-        elChild.innerHTML = addressBook[key].name;
-        el.appendChild(elChild);
+        var contactListChild = document.createElement('p');
+        contactListChild.innerHTML = addressBook[key].name;
+        contactList.appendChild(contactListChild);
     }
     viewContact.style.display = 'none';
     contacts.style.display = 'block';
 });
-goBacka.addEventListener('click', function(){
+addGoBack.addEventListener('click', function(){
     form.reset();
     addContact.style.display = 'none';
     contacts.style.display = 'block';
 });
-el.addEventListener('click', function() {
+contactList.addEventListener('click', function(event) {
     if(event.target.tagName === 'P'){
         activeChild = event.target.textContent;
-        el1Child.innerHTML = addressBook[event.target.textContent].name;
-        el1.appendChild(el1Child);
-        el2Child.innerHTML = addressBook[event.target.textContent].phonenumber;
-        el2.appendChild(el2Child);
-        el3Child.innerHTML = addressBook[event.target.textContent].email;
-        el3.appendChild(el3Child);
-        successez();
+        viewNameChild.innerHTML = addressBook[event.target.textContent].name;
+        viewName.appendChild(viewNameChild);
+        viewPhoneNumberChild.innerHTML = addressBook[event.target.textContent].phonenumber;
+        viewPhoneNumber.appendChild(viewPhoneNumberChild);
+        viewEmailChild.innerHTML = addressBook[event.target.textContent].email;
+        viewEmail.appendChild(viewEmailChild);
+        contacts.style.display = 'none';
+        viewContact.style.display = 'block';
     }
 })
 deleteThis.addEventListener('click', function() {
@@ -119,15 +116,15 @@ deleteThis.addEventListener('click', function() {
     if(goOn === true) {
         delete addressBook[activeChild];
         localStorage.setItem('addressBook', JSON.stringify(addressBook));
-        while(el.hasChildNodes()) {
-            el.removeChild(el.firstChild);
+        while(contactList.hasChildNodes()) {
+            contactList.removeChild(contactList.firstChild);
         }
         viewContact.style.display = 'none';
         contacts.style.display = 'block';
         for(var key in addressBook) {
-            var elChild = document.createElement('p');
-            elChild.innerHTML = addressBook[key].name;
-            el.appendChild(elChild);
+            var contactListChild = document.createElement('p');
+            contactListChild.innerHTML = addressBook[key].name;
+            contactList.appendChild(contactListChild);
         }
         deleteSucess.style.display = 'block';
         setTimeout(function() {

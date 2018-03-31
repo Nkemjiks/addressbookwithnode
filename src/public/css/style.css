@@ -17,11 +17,11 @@
     #delete {
         left: 85%;
     }
-    #view-contact > #goback {
+    #view-contact > #view-go-back {
         top: 50px;
         left: 10px;
     }
-    #add-contact > #gobacka {
+    #add-contact > #add-go-back {
         top: 50px;
         left: 10px;
     }
@@ -42,11 +42,11 @@
     #edit {
         left: 67%;
     }
-    #view-contact > #goback {
+    #view-contact > #view-go-back {
         top: 8%;
         left: 5%;
     }
-    #add-contact > #gobacka {
+    #add-contact > #add-go-back {
         top: 10%;
         left: 5%;
     }
@@ -67,11 +67,11 @@
     #edit {
         left: 68%;
     }
-    #view-contact > #goback {
+    #view-contact > #view-go-back {
         top: 8%;
         left: 2%;
     }
-    #add-contact > #gobacka {
+    #add-contact > #add-go-back {
         top: 10%;
         left: 2%;
     }
@@ -93,11 +93,11 @@
     #edit {
         left: 68%;
     }
-    #view-contact > #goback {
+    #view-contact > #view-go-back {
         top: 8%;
         left: 3%;
     }
-    #add-contact > #gobacka {
+    #add-contact > #add-go-back {
         top: 10%;
         left: 3%;
     }
@@ -119,11 +119,11 @@
     #edit {
         left: 71%;
     }
-    #view-contact > #goback {
+    #view-contact > #view-go-back {
         top: 8%;
         left: 3%;
     }
-    #add-contact > #gobacka {
+    #add-contact > #add-go-back {
         top: 10%;
         left: 3%;
     }
@@ -139,17 +139,18 @@
 #view-contact, #contacts, #add-contact {
     display: none;
 }
-#first, #second {
+#landing-page-first-icon, #landing-page-second-icon {
     display: block;
     position: relative;
     margin: 0 auto;
 }
-#first {
+#landing-page-first-icon {
     width: 50%;
     top: 70px;
 }
-#second {
+#landing-page-second-icon {
     top: 50%;
+    cursor: pointer;
 }
 #contact-list {
     height: 87%;
@@ -163,11 +164,13 @@
     color: #B114BB;
     box-shadow: 1px 1px 10px rgb(229, 128, 236);
     border-radius: 5px;  
+    cursor: pointer;
 }
 #contacts > img {
     background-color: #B114BB;
     border-radius: 50%;
     position: absolute;
+    cursor: pointer;
 }
 #add-contact > p {
     width: 67%;
@@ -201,7 +204,7 @@ h2 {
     box-sizing: border-box;
     padding-top: 30px;
 }
-#addback {
+.add-contact-icon, .view-contact-icon {
     background-color: #B114BB;
 }
 form {
@@ -222,12 +225,12 @@ input{
     border-top: 0;
     font-size: 18px;
 }
-#addback img {
+.add-contact-icon > img, .view-contact-icon > img {
     width: 230px;
     margin: 0 auto;
     display: block;
 }
-#addback p {
+.add-contact-icon p {
     margin: 0;
     padding-bottom: 30px;
     color: white;
@@ -245,6 +248,7 @@ button {
     background-color: #B114BB;
     color: white;
     float: right;
+    cursor: pointer;
 }
 .viewdisplay {
     height: 70px;
@@ -254,17 +258,16 @@ button {
     margin: 20px auto;
     color: #B114BB;
 }
-#view-contact > #goback {
+#view-contact > #view-go-back, #add-contact > #add-go-back {
     position: absolute;
+    cursor: pointer;
 }
-#add-contact > #gobacka {
-    position: absolute;
-}
+
 #edit , #delete {
     background-color: #B114BB;
     position: absolute;
-    top: 88%;
+    top: 40%;
     border-radius: 50%;
     width: 40px;
+    cursor: pointer;
 }
-
